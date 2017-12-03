@@ -19,7 +19,7 @@ categories: DOM
 我们现在常说的 “DOM 事件流” 是在 **DOM2** 中规范并标准化，在 **DOM3** 进一步的拓展和完善。
 
 *下图是 DOM3 事件流 示意图*
-![event flow][1]
+![event flow](https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg)
 
 DOM 事件流中规定了事件流包含三个阶段：**事件捕获阶段(capture phase)**，**处于目标阶段(target phase)** 和 **事件冒泡阶段(bubble phase)**
 
@@ -142,9 +142,3 @@ DOM3 中主要是拓展了 `addEventListener()` 中的第三个函数，现在�
 - [Interface EventTarget](https://dom.spec.whatwg.org/#interface-eventtarget)
 - [MDN addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 - 《javascript 高级程序设计》
-
-
-[1]: https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg
-  
-  
-
