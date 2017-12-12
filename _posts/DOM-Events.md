@@ -4,6 +4,7 @@ comments: true
 date: 2017-12-03 17:36:45
 categories: JavaScript
 tags: DOM
+toc: true
 ---
 
 > 本文尽可能的不啰嗦，也尽可能的不放过每一个重点。
