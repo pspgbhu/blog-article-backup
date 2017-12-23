@@ -2,7 +2,7 @@
 title: 用 Egret 引擎制作 HTML5 游戏
 comments: true
 date: 2017-12-09 10:58:26
-categories: Engine
+categories: GameEngine
 tags: Egret
 img:
 ---
