@@ -7,6 +7,8 @@ tags: Egret
 img:
 ---
 
+> 2017-12-23 更新：通过自定义事件来帮助场景间的切换，监听 `egret.Event.ADDED` 来在监听容器被添加进显示列表的事件。
+
 
 近期有机会接触到了 HTML5 游戏引擎，虽然之前也做过一些移动端的小游戏，但大多是通过 DOM 来实现的，这次有机会接触到给予 canvas 的游戏引擎也是感触颇多，同时也发现网上关于 Egret 起步的文章也很少，因此便打算将自己的起步经验记录下来，希望能对后来人起到一点点的帮助。
 
@@ -144,7 +146,7 @@ private createGameScene() {
 ```
 ok，这样背景就添加好了
 
-#### 2.2 创建开场场景
+#### 2.2 创建开场场景 及 场景切换的正确姿势
 
 在 `src` 目录下新建 `LayerBegin.ts` 文件，新建 `LayerBegin` 类来作为游戏的第一个场景。
 
@@ -156,40 +158,43 @@ class LayerBegin extends egret.DisplayObjectContainer {
 
   constructor() {
     super();
+    this.addEventListener(egret.Event.ADDED, this.init, this);
   }
 
   public init() {
+    // 必要要移除这个，否则会造成死循环，具体原因下面会说明
+    this.removeEventListener(egret.Event.ADDED, this.init, this)
     // 新建一个位图对象，游戏标题
     const title: egret.Bitmap = new egret.Bitmap(RES.getRes('title'));
     title.width = 549;
     title.height = 154;
     title.x = (this.stage.stageWidth - 549) / 2;   // 左右居中
     title.y = 300;
-
     this.addChild(title);
+
+    // 当用户点击页面时，触发事件
+    this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, handleTap, this);
   }
 
-  // 通知上层容器，该实例需要从舞台移除
-  public waitToDone(): Promise<void> {
-    return new Promise(resolve => {
-      const handleTap = () => {
-        // 不要忘记卸载事件
-        this.stage.removeEventListener(egret.TouchEvent.TOUCH_TAP, handleTap, this);
-        resolve();
-      }
-
-      // 当用户点击页面时，触发事件
-      this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, handleTap, this);
-    });
+  public handleTap() {
+    // 下发场景结束事件
+    this.dispatchEventWith('SCENE_END');
+    // 不要忘记卸载事件
+    this.stage.removeEventListener(egret.TouchEvent.TOUCH_TAP, handleTap, this);
   }
 }
 ```
-注意，其中 `this.stage` 在实例未被添加进舞台的时候，其值是 null 。
+现在就来说一下为什么必须要手动卸载这个事件。`egret.Event.ADDED` 事件不仅仅在容器被加入到显示列表中被调用，在其子组件被加入到显示列表中的时候，由于**事件冒泡机制**，也会导致该容器的 `ADDED` 事件被触发。
 
-这样，我们第一个场景的类就开发完毕了，现在来将其实例化到舞台上。继续完成 `src/Main.ts` 中的 `createGameScene()` 函数，**注意：这里使用了 async await，因此不要忘记在 createGameScene 函数前添加 async 关键字。**
+如果在上面调用 init 方法的时候不卸载 `ADDED` 事件，由于 init 方法中将 title 子组件加入到了显示列表中，因此事件会冒泡到该容器上，再次触发 `ADDED` 事件，形成死循环。
+
+
+另一件需要注意的事情是，**其中 `this.stage` 在实例未被添加进舞台的时候，其值是 null。**
+
+这样，我们第一个场景的类就开发完毕了，现在来将其实例化到舞台上。继续完成 `src/Main.ts` 中的 `createGameScene()` 函数。
 
 ```javascript
-private async createGameScene() {
+private createGameScene() {
   // 设置整体背景
   const bg: egret.Bitmap = new egret.Bitmap(RES.getRes('bg'));  // 新建一个位图对象，游戏背景图
   bg.width = this.stage.stageWidth;       // 将图片的宽度设置成舞台的宽度
@@ -199,12 +204,15 @@ private async createGameScene() {
   // 舞台第一幕
   let layerBegin: LayerBegin = new LayerBegin();    // 新建实例
   this.addChild(layerBegin);  // 添加进根容器
-  layerBegin.init();  // 初始化第一个场景
+  // 监听第一幕谢幕事件，并切换第二幕
+  layerBegin.addEventListene(egret.TouchEvent.TOUCH_TAP, toGameLayer, this);
+}
 
-  // 等待第一幕执行完毕
-  await layerBegin.waitToDone();
-  this.removeChild(layerBegin); // 从根容器中移除实例
-  layerBegin = null;            // 删除引用
+toGameLayer() {
+  // 不要忘记卸载事件
+  layerBegin.removeEventListener(egret.TouchEvent.TOUCH_TAP, toGameLayer, this);
+  // 从根容器中移除实例
+  this.removeChild(layerBegin);
 }
 ```
 
@@ -318,11 +326,12 @@ collisionsDetection(one: egret.DisplayObject, two: egret.DisplayObject): boolean
 
 **劣势项：**
 
-1. 对于 WEB 前端开发工程师，对比与熟悉的 DOM 操作来说，用 canvas 游戏引擎需要一定的学习成本。
+1. 对于 WEB 前端开发工程师来说，用 canvas 游戏引擎需要一定的学习成本。
 
 **总结：**
 
 总而言之，如果想做一款出色的 HTML5 游戏的话，无论游戏大小，都是推荐使用游戏引擎制作的
+
 
 ## Reference
 - [HTML5游戏引擎深度测评](http://www.jianshu.com/p/0469cd7b1711)
