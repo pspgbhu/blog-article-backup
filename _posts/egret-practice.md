@@ -1,5 +1,5 @@
 ---
-title: egret-practice
+title: Egret 个人实践
 comments: true
 date: 2017-12-24 02:10:11
 categories: GameEngine
