@@ -111,13 +111,13 @@ DOM3 中主要是拓展了 `addEventListener()` 中的第三个函数，现在�
 | --------- | ---- | ---- | ---- |
 | bubbles | Boolean | r | 表明事件是否冒泡 |
 | cancelable | Boolean | r | 表明是否可以取消事件的默认行为 |
-| **currentTarget** | Element | r | 其事件处理程序当前正在处理事件的那个元素 |
+| **currentTarget** | Element | r | 其事件处理程序当前正在处理事件的那个元素，在处理程序被调用的时候通常等于绑定事件的元素 |
 | detail | Intrger | r | 与事件相关的细节
 | eventPhase | Integer | r | 调用事件处理程序的阶段：1表示捕获阶段，2表示处于目标，3表示冒泡。这里的2其实是有问题的，下面会详解。
 | preventDefault() | Function | r | 取消事件的默认行为。如果 cancelable 是 true，则可以使用此方法
 | stopImmediatePropagation() | Function | r | 取消事件的进一步捕获或冒泡，同时阻止任何事件处理程序被调用（DOM3 中新增）|
 | stopPropagation() | Function | r | 取消事件的进一步捕获或冒泡。如果 bubbles 为 true，则可以使用这个方法 |
-| **target** | Element | r | 事件的目标 |
+| **target** | Element | r | 事件的目标，即实际触发事件的元素 |
 | trusted | Boolean | r | 为 true 表示事件是浏览器生成的。为 false 表示事件是由开发人员通过 JavaScript 创建的（DOM3 新增）|
 | type | String | r | 被触发的事件类型 |
 | view | AbstractView | r | 与事件关联的抽象视图。等同于发生事件的 window 对象 |
