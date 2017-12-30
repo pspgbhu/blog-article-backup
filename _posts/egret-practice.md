@@ -8,7 +8,6 @@ img:
 ---
 
 
-
 ## 1. UI 与逻辑分离
 
 在使用 Egret 做游戏的时候，由于 UI 样式与游戏逻辑都需要用 TS 代码来描述，因此做到样式与逻辑相分离，是每一个项目的最基本的要求。
@@ -158,7 +157,9 @@ src
     ├── GameUI.ts       # 游戏场景主UI容器
 ```
 
-## 3. 对象池
+## 3. 优化
+
+## 3.1 对象池
 
 创建对象时，将对象创建在循环外部并在循环内反复重用它。并非所有对象总是能够这么做，但在许多情形下此技术很有帮助。Egret 官方给出了一个 [Egret 对象池的实现](https://github.com/egret-labs/egret-game-library/blob/master/src/game/ObjectPool.ts)。
 
@@ -191,7 +192,21 @@ class MonsterPool {
         monster.reset();
         this.pool.push(monster);
     }
-}
+}u
 ```
 
 其实最关键的不是对象池是如何实现的，而是需要具备复用对象的思想。
+
+
+### 3.2 Loading 页面
+
+用原生 DOM 来写 Loading，而不是用 Egret 创建 Loading 页面。
+
+因为只有在 Egret 及其相关依赖 JS 文件加载完毕并且开始执行的时候用 Egret 描写的页面才能展示出来。而且通常情况下，Egret 及其 JS 依赖的文件大小在 300kb 左右，这已经是一个不小的数目了。
+
+因此使用原生 DOM 来写 Loading 页面可以尽快的呈现给用户。
+
+
+### 3.2 通用背景
+
+如果游戏中的背景是在任何场景都通用的，那么我们不妨把这个通用背景直接渲染在 DOM 上而不是在 canvas 中。
