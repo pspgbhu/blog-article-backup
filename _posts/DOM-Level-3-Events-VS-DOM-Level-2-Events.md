@@ -16,11 +16,13 @@ img: https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg
 
 ![20161025100517307](https://user-images.githubusercontent.com/18444796/34526733-58efb3a0-f0de-11e7-9355-f804ae9de9eb.jpg)
 
-书中是按照 DOM Level 2 Events 来描述的：
+《高程》书中是这么描述的：
 
-捕获阶段事件对象会一直从 `Document` 开始向下传递到 `target` 目标元素的父元素上，然后从目标元素上开始进入冒泡阶段，一直向上传递到 `Document` 对象上。
+> 捕获阶段事件对象会一直从 `Document` 开始向下传递到 `target` 目标元素的父元素上，然后从目标元素上开始进入冒泡阶段，一直向上传递到 `Document` 对象上。
+>
+> 在事件处理程序中，事件对象“处于目标阶段”也不是真正的处于该阶段，而是处于“冒泡阶段”。
 
-在事件处理程序中，事件对象“处于目标阶段”也不是真正的处于该阶段，而是处于“冒泡阶段”。
+然而在新标准下，并不是这个样子的。
 
 ### DOM Level 3 Events 级事件流
 
