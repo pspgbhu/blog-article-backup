@@ -1,6 +1,6 @@
 ---
 title: Git 分支合并 merge or rebase ?
-comments: false
+comments: true
 date: 2017-11-18 23:16:32
 categories: Git
 tags: Git
