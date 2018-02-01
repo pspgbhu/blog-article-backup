@@ -60,11 +60,11 @@ CSS 解析的时间开销往往可以忽略不计，而通常真正产生影响�
 
 ```html
 <div style="display: none;">
-  <div id="div-one" style="background-image: url(/rendering_engine.png)">
+  <div id="div-one" style="background-image: url(/rendering_engine.png);">
   </div>
 </div>
 
-<div id="div-two" style="background-image: url(/cssom-construction.png)"></div>
+<div id="div-two" style="display: none; background-image: url(/cssom-construction.png);"></div>
 ```
 让我们再看一下 Chrome DevTools
 
