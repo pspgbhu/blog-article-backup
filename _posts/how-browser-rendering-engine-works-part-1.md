@@ -4,7 +4,7 @@ comments: true
 date: 2018-01-22 01:22:58
 categories: 浏览器
 tags: 浏览器渲染引擎
-img: http://static.zybuluo.com/pspgbhu/e9suhdg3jtwdqaowsvx76b1a/browser-rendering.png
+img: http://static.zybuluo.com/pspgbhu/x7fd0pvcydddz0v8vc37uuza/rendering-process.png
 
 ---
 
@@ -187,7 +187,7 @@ LayoutObject* LayoutObject::createObject(Element* element, const ComputedStyle& 
 - [LayoutObject.cpp](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/layout/LayoutObject.cpp)
 - [LayoutView.cpp](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/layout/LayoutView.cpp)
 
-  [1]: http://static.zybuluo.com/pspgbhu/e9suhdg3jtwdqaowsvx76b1a/browser-rendering.png
+  [1]: http://static.zybuluo.com/pspgbhu/x7fd0pvcydddz0v8vc37uuza/rendering-process.png
   [2]: http://static.zybuluo.com/pspgbhu/9mi6j7osg01apgzjc0298giv/parsing-model-overview%20%281%29.png
   [3]: http://static.zybuluo.com/pspgbhu/15hbugs0m5ret8oebay7s7dg/cssom-construction.png
   [4]: http://static.zybuluo.com/pspgbhu/mpktzkj3x8bgkjc3shgbovro/cssom-tree.png
