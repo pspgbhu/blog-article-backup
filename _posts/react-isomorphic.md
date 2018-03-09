@@ -53,11 +53,9 @@ React 提供了四个 API 来将虚拟 DOM 输出为 HTML 文本。
 
 服务端渲染的原理就是：在服务端使用 React API 输出 HTML 文档，然后通过模板引擎将文档内容渲染在页面中，并输出到前端。
 
-我们使用 Koa 来搭建后台应用。
+**React-Router 提供了专门的 StaticRouter 来进行服务端渲染。**
 
-**此外 React-Router 提供了专门的 StaticRouter 来进行服务端渲染。**
-
-在 Koa 的路由文件中：
+我使用了 Koa 来开发后台应用，在 Koa 的路由文件中将 React 输出的 HTML 返回到前端页面中：
 ```js
 // server-side ./routes/index.jsx
 
@@ -226,7 +224,7 @@ hydrate(
 
 ### 在服务端运行 JSX
 
-服务端是不可以直接运行 JSX 的，但是我们可以借助于 babel-register 来实时编译 jsx 文件。
+服务端是不可以直接运行 JSX 的，但是我们可以借助于 babel-register 来在服务端支持 jsx 格式的文件。
 
 在整个 node 程序的最上方引入 babel-register
 
@@ -248,7 +246,7 @@ require('babel-register')({
 const Koa = require('koa')
 const app = new Koa();
 ```
-这样就能编译 .jsx 后缀文件的 jsx 语法了。
+这样就能正常处理 .jsx 后缀的文件和 jsx 语法了。
 
 ### 样式文件的处理
 
