@@ -4,6 +4,7 @@ comments: true
 date: 2017-11-18 23:16:32
 categories: Git
 tags: Git
+img: https://pspgbhu.github.io/assets/img/merge-base.png
 ---
 
 前些天学习了一些关于 Git 的一些知识，主要是关于分支合并的一些知识。现在在这里做一个总结，也方便以后自己查阅。

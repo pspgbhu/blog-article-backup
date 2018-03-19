@@ -4,7 +4,7 @@ comments: true
 date: 2017-12-09 10:58:26
 categories: GameEngine
 tags: Egret
-img:
+img: https://learnopengl-cn.github.io/img/06/Breakout/05/02/collisions_overlap.png
 ---
 
 > 2017-12-23 更新：通过自定义事件来帮助场景间的切换，监听 `egret.Event.ADDED` 来在监听容器被添加进显示列表的事件。
@@ -17,7 +17,7 @@ img:
 安装引擎这个步骤其实官网教程讲的也很详细 [Egret 安装与部署](http://developer.egret.com/cn/2d/projectConfig/installation)，在 [Egret 官网下载](https://www.egret.com/products/engine.html) 下载 Egret Engine，下载并安装之后会发现其本身是一个 Launcher，具备启动和管理 Egret 引擎和插件的一个东西。
 
 然后只用在 Launcher 中安装最新的引擎即可，其他的我们暂时先不管。
-![egret launcher](/images/egret_launcher.jpg)
+![egret launcher](http://static.zybuluo.com/pspgbhu/6eu35sv6dzhp77sp25oaw1ex/egret_launcher.jpg)
 
 ## 创建一个新的项目
 

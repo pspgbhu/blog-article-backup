@@ -5,6 +5,7 @@ date: 2017-12-03 17:36:45
 categories: JavaScript
 tags: DOM
 toc: true
+img: https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg
 ---
 
 浏览器事件系统相对比较复杂，因此本文只梳理其中几个最重要的概念。

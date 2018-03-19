@@ -4,7 +4,7 @@ comments: true
 date: 2017-07-10 17:23:31
 categories: JavaScript
 tags: ECMAScript
-img:
+img: http://static.pspgbhu.me/common/pic_vangogh.jpg
 ---
 
 Javascript 由于各种各样的原因，在判断一个变量的数据类型方面一直存在着一些问题，其中最典型的问题恐怕就是 `typeof null` 会返回 `object` 了吧。因此在这里简单的总结一下判断数据类型时常见的陷阱，以及正确的处理姿势。

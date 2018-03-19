@@ -4,7 +4,7 @@ comments: true
 date: 2017-12-24 02:10:11
 categories: GameEngine
 tags: Egret
-img:
+img: http://cdn.dev.egret.com/egret-docs/extension/EUI/skin/separate/55cdcff23152f.png
 ---
 
 
