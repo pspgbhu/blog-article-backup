@@ -5,14 +5,9 @@ date: 2018-03-09 01:45:58
 categories: React
 tags: Server-Side-Render
 img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520541763181&di=5421f1ab7a5b72340d02b021493d244b&imgtype=0&src=http%3A%2F%2Fs1.51cto.com%2Fwyfs02%2FM01%2F88%2F7F%2FwKiom1f55HCSS-DrAACSkyHme8o914.png-wh_651x-s_1436211364.png
-
 ---
 
-近日实现了一个 React 同构直出的模板 [React Isomophic](https://github.com/pspgbhu/react-isomorphic)，开箱即用。
 
-该模板支持 Koa2 + React + React Router + Redux + Less 。
-
-## 为什么要服务端渲染和同构
 
 传统的 SPA 开发模式由于其页面渲染全部放在了客户端，从而导致了一些一直以来难以解决的痛点：首屏白屏时间较长、SEO 不友好等。
 
@@ -239,11 +234,11 @@ router.get('*', async (ctx) => {
 export default router;
 ```
 
-### Redux 的服务端渲染
+## Redux 的服务端渲染
 
 Redux 的服务端渲染实现思路也很清晰，就是在服务端初始化一个 Store 的同时把这个 Store 也传递到客户端。
 
-#### 第一步：在服务端构建初始 store
+### 第一步：在服务端构建初始 store
 
 扩充 Koa 的路由文件：
 
@@ -287,7 +282,7 @@ router.get('*', async (ctx) => {
 export default router;
 ```
 
-#### 第二步：模板引擎将初始的 store 渲染到页面中
+### 第二步：模板引擎将初始的 store 渲染到页面中
 
 模板引擎将 koa router 传来的 store 数据赋值给 `window.__INITIAL_STATE_` 对象下。
 
@@ -311,7 +306,7 @@ export default router;
 </html>
 ```
 
-#### 第三步：客户端获取 Redux store 的初始值
+### 第三步：客户端获取 Redux store 的初始值
 
 ```js
 // client-side index.jsx
@@ -430,4 +425,4 @@ app.use(serve(path.join(__dirname, 'public')));
 
 整的来说，由于 React 及其全家桶对服务端渲染的支持十分不错，因此在服务端渲染的实现上整体还是比较简单的。而且实现上也很灵活，肯定不止本文的这一种思路。
 
-最近还重构了我的[博客](http://blog.pspgbhu.me)，就是基于 React 服务端渲染的，体验感觉还是不错的，各位看官可以体验一下。
+这里在推荐一下 React 服务端渲染脚手架 [react-isomorphic](https://github.com/pspgbhu/react-isomorphic)，我的个人[博客](https://github.com/pspgbhu/react-isomorphic) 便是基于该脚手架重构开发的。
