@@ -36,7 +36,9 @@ img: http://static.zybuluo.com/pspgbhu/q39xwwbx7xpk0s6jbe4f6er5/image.svg
 
 我第一版的正则表达式是下面这样的。正则前半部分 `[\\/]node_modules[\\/]` 没什么好看的，主要关注后半部分。
 
+
 ```js
+// 这是一个错误示例
 var reg = new RegExp(/[\\/]node_modules[\\/].*?(?!css|less)$/);
 reg.test('/node_modules/grrroop/demo.css'); // true
 reg.exec('/node_modules/grrroop/demo.css');
@@ -50,6 +52,7 @@ reg.exec('/node_modules/grrroop/demo.css');
 之后又找了个大神指导了一番，终于发现了正确的姿势：
 
 ```js
+// 正确示例
 var reg = new RegExp(/[\\/]node_modules[\\/](?!.*?(css|less)$)/);
 reg.test('/node_modules/grrroop/demo.css'); // false
 ```
