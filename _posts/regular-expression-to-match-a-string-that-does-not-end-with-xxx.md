@@ -1,5 +1,5 @@
 ---
-title: 使用正则表达式来匹配不是以 XXX 结尾的字符串
+title: 正则表达式匹配非 XXX 结尾字符串
 comments: true
 date: 2018-05-13 02:00:58
 categories: JavaScript
