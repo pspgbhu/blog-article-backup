@@ -3,7 +3,7 @@ title: 正向否定预查与匹配非 XXX 结尾字符串
 comments: true
 date: 2018-05-13 02:00:58
 categories: JavaScript
-tags: RegExp
+tags: 正则表达式
 img: http://static.zybuluo.com/pspgbhu/q39xwwbx7xpk0s6jbe4f6er5/image.svg
 ---
 

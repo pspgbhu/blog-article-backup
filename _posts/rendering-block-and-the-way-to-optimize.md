@@ -2,8 +2,8 @@
 title: 前端优化：首屏渲染的阻塞与常见的优化方式
 comments: true
 date: 2018-02-01 00:12:12
-categories: 前端优化
-tags: 首屏渲染优化
+categories: 基础知识
+tags: 前端优化
 img: http://static.zybuluo.com/pspgbhu/1euvd8zar7uxj5wmyh37ml9n/example.png
 ---
 

@@ -2,8 +2,8 @@
 title: React 服务端渲染与同构
 comments: true
 date: 2018-03-09 01:45:58
-categories: React
-tags: Server-Side-Render
+categories: JavaScript
+tags: SSR Nodejs React
 img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520541763181&di=5421f1ab7a5b72340d02b021493d244b&imgtype=0&src=http%3A%2F%2Fs1.51cto.com%2Fwyfs02%2FM01%2F88%2F7F%2FwKiom1f55HCSS-DrAACSkyHme8o914.png-wh_651x-s_1436211364.png
 ---
 

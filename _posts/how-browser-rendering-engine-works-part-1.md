@@ -2,7 +2,7 @@
 title: 浏览器渲染引擎工作原理（一）：HTML 解析与树的构建
 comments: true
 date: 2018-01-22 01:22:58
-categories: 浏览器
+categories: 基础知识
 tags: 浏览器渲染引擎
 img: http://static.zybuluo.com/pspgbhu/x7fd0pvcydddz0v8vc37uuza/rendering-process.png
 

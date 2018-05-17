@@ -2,7 +2,7 @@
 title: 浏览器渲染引擎工作原理（二）：布局与绘制
 comments: true
 date: 2018-02-18 23:06:22
-categories: 浏览器
+categories: 基础知识
 tags: 浏览器渲染引擎
 img: http://static.zybuluo.com/pspgbhu/i5oob324pu3mzb57ptobkn7m/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-20%20%E4%B8%8B%E5%8D%887.30.18.png
 ---

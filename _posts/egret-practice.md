@@ -2,8 +2,8 @@
 title: Egret 个人实践
 comments: true
 date: 2017-12-24 02:10:11
-categories: GameEngine
-tags: Egret
+categories: JavaScript
+tags: Egret 游戏引擎
 img: http://cdn.dev.egret.com/egret-docs/extension/EUI/skin/separate/55cdcff23152f.png
 ---
 

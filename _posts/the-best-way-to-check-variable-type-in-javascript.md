@@ -3,7 +3,7 @@ title: JavaScript 判断变量类型的陷阱 与 最佳的处理方式
 comments: true
 date: 2017-07-10 17:23:31
 categories: JavaScript
-tags: ECMAScript
+tags: 代码技巧
 img: http://static.pspgbhu.me/common/pic_vangogh.jpg
 ---
 

@@ -2,7 +2,7 @@
 title: Git 分支合并 merge or rebase ?
 comments: true
 date: 2017-11-18 23:16:32
-categories: Git
+categories: Tools
 tags: Git
 img: https://pspgbhu.github.io/assets/img/merge-base.png
 ---

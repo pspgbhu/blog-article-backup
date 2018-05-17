@@ -2,8 +2,8 @@
 title: 用 Egret 引擎制作 HTML5 游戏
 comments: true
 date: 2017-12-09 10:58:26
-categories: GameEngine
-tags: Egret
+categories: JavaScript
+tags: Egret 游戏引擎
 img: https://learnopengl-cn.github.io/img/06/Breakout/05/02/collisions_overlap.png
 ---
 

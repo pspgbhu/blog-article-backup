@@ -2,8 +2,8 @@
 title: DOM Level 3 Events VS DOM Level 2 Events
 comments: true
 date: 2018-01-07 17:33:31
-categories: DOM
-tags: DOM-Events
+categories: JavaScript
+tags: DOM
 img: https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg
 ---
 
